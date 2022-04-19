@@ -15,10 +15,13 @@ function App() {
     <Router>
       <TopBar />
       <Switch>
-        <Route exact path="/" component={Home} />
+        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>
-        <Route path="/login" component={user ? Home : Login} />
-        {/* <Route path="/login">{user ? <Home /> : <Login />}</Route> */}
+        {/* <Route path="/login" component={user ? Home : Login} /> */}
+        <Route path="/login">{user ? <Home /> : <Login />}</Route>
         <Route path="/write">{user ? <Write /> : <Register />}</Route>
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
         <Route path="/post/:postId">
